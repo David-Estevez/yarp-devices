@@ -17,6 +17,7 @@
 #include "ColorDebug.hpp"
 #include "ICanBusSharer.h"
 
+#define PRINT_REL_ENC_ID 24
 
 namespace teo
 {

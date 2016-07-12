@@ -34,6 +34,16 @@ bool teo::TechnosoftIpos::getEncoderTimedRaw(int j, double *encs, double *time)
     else
     {
         iEncodersTimedRawExternal->getEncoderTimedRaw(0,encs,time);
+
+        //j//-- Hack: Query position of rel encoders anyway, but do not overwrite "encs".
+        //*************************************************************
+        uint8_t msg_read[]= {0x40,0x64,0x60,0x00,0x00,0x00,0x00,0x00}; // Query position.
+        if( ! send( 0x600, 8, msg_read) )
+        {
+            CD_ERROR("Could not send \"read encoder\". %s\n", msgToStr(0x600, 8, msg_read).c_str() );
+            return false;
+        }
+        //*************************************************************
     }
 
     return true;

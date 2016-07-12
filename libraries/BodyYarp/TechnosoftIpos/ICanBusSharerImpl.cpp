@@ -272,6 +272,11 @@ bool teo::TechnosoftIpos::interpretMessage( can_msg * message)
             encoder =  got / ( 11.38 * this->tr );
             encoderTimestamp = message->ts;
             encoderReady.post();
+            //j//-- More ugly hacks
+            if (canId==PRINT_REL_ENC_ID)
+            {
+                CD_DEBUG("--------------------> RelEnc of canId(%d): %f\n",canId,encoder);  //-- Safe to read w/o semaphore; read only happens above.
+            }
             return true;
         }
         else if( (message->data[1]==0x7E) && (message->data[2]==0x20) )     // Manual 207Eh
