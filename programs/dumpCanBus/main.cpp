@@ -54,14 +54,14 @@ int main(int argc, char *argv[])
     rf.setDefaultConfigFile("dumpCanBus.ini");
     rf.configure(argc, argv);
 
-    CD_INFO("Checking for yarp network...\n");
-    yarp::os::Network yarp;
-    if (!yarp.checkNetwork())
-    {
-        CD_ERROR("Found no yarp network (try running \"yarpserver &\"), bye!\n");
-        return 1;
-    }
-    CD_SUCCESS("Found yarp network.\n");
+    //CD_INFO("Checking for yarp network...\n");
+    //yarp::os::Network yarp;
+    //if (!yarp.checkNetwork())
+    //{
+    //    CD_ERROR("Found no yarp network (try running \"yarpserver &\"), bye!\n");
+    //    return 1;
+    //}
+    //CD_SUCCESS("Found yarp network.\n");
 
     teo::DumpCanBus mod;
     return mod.runModule(rf);
