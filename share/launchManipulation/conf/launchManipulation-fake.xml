@@ -1,34 +1,41 @@
-/// launchManipulation.ini ///            
+<paramlist name="devCan0">
+  <param name="device">FakeControlboard</param>
+  <param name="axes">7</param>
+</paramlist>
+
+<paramlist name="devCan1">
+  <param name="device">FakeControlboard</param>
+  <param name="axes">7</param>
+</paramlist>
               
-[devCan0]              
-device FakeControlboard             
-axes 7
+<paramlist name="wrapper0">
+  <param name="device">controlboardwrapper2</param>
+  <param name="name">/teo/rightArm</param>
+  <param name="period">60</param>
+  <param name="joints">7</param>
+  <paramlist name="networks">
+    <elem name="devCan0">  0  6  1  7  </elem>
+  </paramlist>
+</paramlist>
+
+<paramlist name="wrapper1">
+  <param name="device">controlboardwrapper2</param>
+  <param name="name">/teo/leftArm</param>
+  <param name="period">60</param>
+  <param name="joints">7</param>
+  <paramlist name="networks">
+    <elem name="devCan1">  0  6  1  7  </elem>
+  </paramlist>
+</paramlist>
               
-[devCan1]              
-device FakeControlboard             
-axes 7
-              
-[wrapper0]              
-device controlboardwrapper2             
-name /teo/rightArm             
-period 60             
-joints 7             
-networks (devCan0)             
-devCan0 0 6 1 7          
-              
-[wrapper1]              
-device controlboardwrapper2             
-name /teo/leftArm             
-period 60             
-joints 7             
-networks (devCan1)             
-devCan1 0 6 1 7          
-              
-[wrapper2]              
-device controlboardwrapper2             
-name /teo/head             
-period 60             
-joints 2             
-networks (devCan1 devCan0)            
-devCan1 0 0 0 0          
-devCan0 1 1 0 0          
+<paramlist name="wrapper2">
+  <param name="device">controlboardwrapper2</param>
+  <param name="name">/teo/head</param>
+  <param name="period">60</param>
+  <param name="joints">2</param>
+  <paramlist name="networks">
+    <elem name="devCan1">  0  0  0  0  </elem>
+    <elem name="devCan0"> 1  1  0  0  </elem>
+  </paramlist>
+</paramlist>
+
