@@ -42,17 +42,19 @@
 
 
 //YARP_DECLARE_PLUGINS(BodyYarp)
+using namespace yarp::os;
 
-int main(int argc, char *argv[])
+int main(int argc, char * argv[])
 {
 
 //    YARP_REGISTER_PLUGINS(BodyYarp);
 
-    yarp::os::ResourceFinder rf;
+    //teo::DumpCanBus module;
+    ResourceFinder rf;
     //rf.setVerbose(true);
-    rf.setDefaultContext("dumpCanBus");
-    rf.setDefaultConfigFile("dumpCanBus.ini");
-    rf.configure(argc, argv);
+    //rf->setDefaultContext("dumpCanBus");
+    //rf->setDefaultConfigFile("dumpCanBus.ini");
+    //rf.configure(argc, argv);
 
     //CD_INFO("Checking for yarp network...\n");
     //yarp::os::Network yarp;
@@ -63,10 +65,11 @@ int main(int argc, char *argv[])
     //}
     //CD_SUCCESS("Found yarp network.\n");
 
-    teo::DumpCanBus mod;
-    int ret = mod.runModule(rf);
+    //teo::DumpCanBus mod;
+    //int ret = mod->runModule(rf);
 
-    printf("here: %d\n", ret);
+    //printf("here: %d\n", ret);
+    printf("enddddd\n");
 
     return 0;
 }

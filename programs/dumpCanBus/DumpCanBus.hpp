@@ -1,23 +1,24 @@
 // -*- mode:C++; tab-width:4; c-basic-offset:4; indent-tabs-mode:nil -*-
 
-#ifndef __DUMP_CAN_BUS__
-#define __DUMP_CAN_BUS__
+//#ifndef __DUMP_CAN_BUS__
+//#define __DUMP_CAN_BUS__
 
 #include <yarp/os/RFModule.h>
-#include <yarp/os/Module.h>
-#include <yarp/os/Network.h>
-#include <yarp/os/Port.h>
-#include <yarp/os/BufferedPort.h>
+//#include <yarp/os/Module.h>
+//#include <yarp/os/Network.h>
+//#include <yarp/os/ResourceFinder.h>
+//#include <yarp/os/Port.h>
+//#include <yarp/os/BufferedPort.h>
 
-#include <yarp/dev/PolyDriver.h>
-#include <yarp/dev/Wrapper.h>
+//#include <yarp/dev/PolyDriver.h>
+//#include <yarp/dev/Wrapper.h>
 
-#include <string>
-#include <sstream>
-#include <stdlib.h>
+//#include <string>
+//#include <sstream>
+//#include <stdlib.h>
 
-#include "ICanBusSharer.h"
-#include "ColorDebug.hpp"
+//#include "ICanBusSharer.h"
+//#include "ColorDebug.hpp"
 
 
 namespace teo
@@ -34,15 +35,15 @@ class DumpCanBus : public yarp::os::RFModule
 {
 public:
     DumpCanBus();
-    bool configure(yarp::os::ResourceFinder &rf);
+    //bool configure(yarp::os::ResourceFinder &rf);
 
 protected:
 
     //yarp::dev::PolyDriver deviceDevCan0;
-    ICanBusHico* iCanBus;
+    //ICanBusHico* iCanBus;
 
     /** A helper function to display CAN messages. */
-    std::string msgToStr(can_msg* message);
+    //std::string msgToStr(can_msg* message);
     double lastNow;
 
     virtual double getPeriod()
@@ -73,5 +74,5 @@ protected:
 
 }  // namespace teo
 
-#endif  // __DUMP_CAN_BUS__
+//#endif  // __DUMP_CAN_BUS__
 

@@ -9,18 +9,18 @@ namespace teo
 DumpCanBus::DumpCanBus() { }
 
 /************************************************************************/
-bool DumpCanBus::configure(yarp::os::ResourceFinder &rf)
-{
+//bool DumpCanBus::configure(yarp::os::ResourceFinder &rf)
+//{
 
-    if(rf.check("help"))
-    {
-        printf("DumpCanBus options:\n");
-        printf("\t--help (this help)\t--from [file.ini]\t--context [path]\n");
-        CD_DEBUG_NO_HEADER("%s\n",rf.toString().c_str());
-        return false;
-    }
+//    if(rf.check("help"))
+//    {
+//        printf("DumpCanBus options:\n");
+//        printf("\t--help (this help)\t--from [file.ini]\t--context [path]\n");
+        //CD_DEBUG_NO_HEADER("%s\n",rf.toString().c_str());
+//        return false;
+//    }
 
-    CD_DEBUG("%s\n",rf.toString().c_str());
+    //CD_DEBUG("%s\n",rf.toString().c_str());
 //    deviceDevCan0.open(rf);
   //  if (!deviceDevCan0.isValid())
   //  {
@@ -32,13 +32,20 @@ bool DumpCanBus::configure(yarp::os::ResourceFinder &rf)
     //lastNow = yarp::os::Time::now();
 
     //return this->Thread::start();
-}
+//}
 
 /************************************************************************/
 
 bool DumpCanBus::updateModule()
 {
     printf("DumpCanBus alive...\n");
+    return true;
+}
+
+/************************************************************************/
+bool interruptModule()
+{
+    printf("Modulo interrumpido\n");
     return true;
 }
 
