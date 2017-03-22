@@ -21,24 +21,24 @@ bool DumpCanBus::configure(yarp::os::ResourceFinder &rf)
     }
 
     CD_DEBUG("%s\n",rf.toString().c_str());
-    deviceDevCan0.open(rf);
-    if (!deviceDevCan0.isValid())
-    {
-        CD_ERROR("deviceDevCan0 instantiation not worked.\n");
-        return false;
-    }
-    deviceDevCan0.view(iCanBus);
+//    deviceDevCan0.open(rf);
+  //  if (!deviceDevCan0.isValid())
+  //  {
+    //    CD_ERROR("deviceDevCan0 instantiation not worked.\n");
+     //   return false;
+   // }
+   // deviceDevCan0.view(iCanBus);
 
-    lastNow = yarp::os::Time::now();
+    //lastNow = yarp::os::Time::now();
 
-    return this->start();
+    //return this->Thread::start();
 }
 
 /************************************************************************/
 
 bool DumpCanBus::updateModule()
 {
-    //printf("DumpCanBus alive...\n");
+    printf("DumpCanBus alive...\n");
     return true;
 }
 
@@ -46,15 +46,19 @@ bool DumpCanBus::updateModule()
 
 bool DumpCanBus::close()
 {
-    this->stop();
+    //this->Thread::stop();
 
-    deviceDevCan0.close();
+    //yarp::os::Time::delay(2);
+
+   // deviceDevCan0.close();
+
+    //yarp::os::Time::delay(2);
 
     return true;
 }
 
 /************************************************************************/
-
+/*
 std::string DumpCanBus::msgToStr(can_msg* message)
 {
 
@@ -75,7 +79,7 @@ std::string DumpCanBus::msgToStr(can_msg* message)
 
     return tmp.str();
 }
-
+*/
 /************************************************************************/
 
 }  // namespace teo

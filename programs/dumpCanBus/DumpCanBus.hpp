@@ -29,7 +29,8 @@ namespace teo
  * @brief Launches one CAN bus driver, dumps output.
  *
  */
-class DumpCanBus : public yarp::os::RFModule, public yarp::os::Thread
+//class DumpCanBus : public yarp::os::RFModule, public yarp::os::Thread
+class DumpCanBus : public yarp::os::RFModule
 {
 public:
     DumpCanBus();
@@ -37,7 +38,7 @@ public:
 
 protected:
 
-    yarp::dev::PolyDriver deviceDevCan0;
+    //yarp::dev::PolyDriver deviceDevCan0;
     ICanBusHico* iCanBus;
 
     /** A helper function to display CAN messages. */
@@ -46,7 +47,7 @@ protected:
 
     virtual double getPeriod()
     {
-        return 3.0;
+        return 1.0;
     }
     virtual bool updateModule();
     virtual bool close();
@@ -67,7 +68,7 @@ protected:
      * There is no really reliable, portable way to stop
      * a thread cleanly unless that thread cooperates.
      */
-    virtual void run();
+//    virtual void run();
 };
 
 }  // namespace teo

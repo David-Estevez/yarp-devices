@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 //    YARP_REGISTER_PLUGINS(BodyYarp);
 
     yarp::os::ResourceFinder rf;
-    rf.setVerbose(true);
+    //rf.setVerbose(true);
     rf.setDefaultContext("dumpCanBus");
     rf.setDefaultConfigFile("dumpCanBus.ini");
     rf.configure(argc, argv);
@@ -64,6 +64,10 @@ int main(int argc, char *argv[])
     //CD_SUCCESS("Found yarp network.\n");
 
     teo::DumpCanBus mod;
-    return mod.runModule(rf);
+    int ret = mod.runModule(rf);
+
+    printf("here: %d\n", ret);
+
+    return 0;
 }
 
