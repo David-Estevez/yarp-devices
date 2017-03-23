@@ -13,6 +13,8 @@ endif(COMMAND cmake_policy)
 
 project(TEO_BODY)
 
+add_definitions(-DYARP_NO_DEPRECATED_WARNINGS=ON)
+
 option(BUILD_SHARED_LIBS "All shared libs" TRUE)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -frtti")
